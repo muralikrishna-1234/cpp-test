@@ -32,7 +32,6 @@ int main(){
 	head = insert_at_begin(head,3);
 	head = insert_at_begin(head,4);
 
-	//display
 	display(head);
 	return 0;
 }
