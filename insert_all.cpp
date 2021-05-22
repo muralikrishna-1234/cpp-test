@@ -32,6 +32,18 @@ node* insert_at_pos(node* head, int n, int pos){
 	return dummy.next;
 }
 
+node* insert_at_end(node* head, int n){
+	node dummy(0);
+	dummy.next = head;
+	node* temp = &dummy;
+	node* new_node = get_new_node(n);
+	while(temp && temp->next){
+		temp = temp->next;
+	}
+	temp->next = new_node;
+	return dummy.next;
+}
+
 void display(node* head){
 	while(head){
 		std::cout<<head->data<<" ";
@@ -49,6 +61,9 @@ int main(){
 
 	display(head);
 	head = insert_at_pos(head, 5, 5);
+	display(head);
+
+	head = insert_at_end(head, 6);
 	display(head);
 	return 0;
 }
